@@ -277,55 +277,6 @@
     letter-spacing: 0.04em;
   }
 
-  /* Edit overlay */
-  .edit-overlay {
-    position: absolute; top: 0.6rem; right: 0.6rem;
-    background: rgba(0,0,0,0.6);
-    border: 1px solid var(--border);
-    border-radius: 6px; padding: 0.3rem 0.6rem;
-    font-size: 0.72rem; cursor: pointer; color: var(--muted);
-    transition: color 0.2s; z-index: 2;
-  }
-  .edit-overlay:hover { color: var(--accent); }
-
-  .edit-panel {
-    display: none;
-    margin-top: 1.2rem;
-    padding: 1.2rem;
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    flex-direction: column; gap: 0.75rem;
-  }
-  .edit-panel.open { display: flex; }
-  .edit-panel label { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
-  .edit-panel textarea,
-  .edit-panel input {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 0.6rem 0.9rem;
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.88rem;
-    outline: none;
-    resize: vertical;
-    transition: border-color 0.2s;
-    width: 100%;
-  }
-  .edit-panel textarea { min-height: 80px; }
-  .edit-panel textarea:focus,
-  .edit-panel input:focus { border-color: var(--accent); }
-  .edit-save-btn {
-    align-self: flex-start;
-    background: var(--accent); color: var(--bg);
-    border: none; border-radius: 6px;
-    padding: 0.5rem 1.2rem;
-    font-family: 'Syne', sans-serif;
-    font-weight: 600; font-size: 0.82rem; cursor: pointer;
-    letter-spacing: 0.05em; transition: opacity 0.2s;
-  }
-  .edit-save-btn:hover { opacity: 0.85; }
 
   /* ── ABOUT ── */
   #about {
@@ -411,28 +362,6 @@
     color: var(--muted); font-size: 0.78rem;
   }
 
-  /* ── EDIT MODE TOGGLE ── */
-  .edit-mode-btn {
-    position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: 100px;
-    padding: 0.65rem 1.4rem;
-    display: flex; align-items: center; gap: 0.5rem;
-    cursor: pointer; color: var(--muted);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.82rem; letter-spacing: 0.04em;
-    transition: all 0.2s;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.4);
-  }
-  .edit-mode-btn:hover { border-color: var(--accent); color: var(--accent); }
-  .edit-mode-btn.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
-  .edit-dot {
-    width: 7px; height: 7px; border-radius: 50%;
-    background: currentColor;
-    animation: pulse 1.5s infinite;
-  }
-  .edit-mode-btn:not(.active) .edit-dot { animation: none; }
 
   /* ── ANIMATIONS ── */
   @keyframes fadeUp {
@@ -666,18 +595,6 @@
           <span class="tool-tag">After Effects</span>
           <span class="tool-tag">Duik Angela</span>
         </div>
-        <div class="edit-panel" id="edit-1">
-          <label>Название</label>
-          <input type="text" id="inp-title-1" placeholder="Название проекта">
-          <label>Год</label>
-          <input type="text" id="inp-year-1" placeholder="2025 · Unity Video Artist">
-          <label>Описание</label>
-          <textarea id="inp-desc-1" placeholder="Что делали, задача, результат..."></textarea>
-          <label>Инструменты (через запятую)</label>
-          <input type="text" id="inp-tools-1" placeholder="Unity, After Effects, Premiere Pro">
-          <button class="edit-save-btn" onclick="saveEdit(1)">Сохранить</button>
-        </div>
-        <button class="edit-overlay" onclick="toggleEdit(1)">✏ Редактировать</button>
       </div>
     </div>
 
@@ -698,18 +615,6 @@
           <span class="tool-tag">Unity</span>
           <span class="tool-tag">Spine</span>
         </div>
-        <div class="edit-panel" id="edit-2">
-          <label>Название</label>
-          <input type="text" id="inp-title-2" placeholder="Название проекта">
-          <label>Год</label>
-          <input type="text" id="inp-year-2" placeholder="2024 · Unity Video Artist">
-          <label>Описание</label>
-          <textarea id="inp-desc-2" placeholder="Что делали, задача, результат..."></textarea>
-          <label>Инструменты (через запятую)</label>
-          <input type="text" id="inp-tools-2" placeholder="Unity, Spine, After Effects">
-          <button class="edit-save-btn" onclick="saveEdit(2)">Сохранить</button>
-        </div>
-        <button class="edit-overlay" onclick="toggleEdit(2)">✏ Редактировать</button>
       </div>
     </div>
 
@@ -730,18 +635,6 @@
           <span class="tool-tag">Unity</span>
           <span class="tool-tag">Blender</span>
         </div>
-        <div class="edit-panel" id="edit-3">
-          <label>Название</label>
-          <input type="text" id="inp-title-3" placeholder="Название проекта">
-          <label>Год</label>
-          <input type="text" id="inp-year-3" placeholder="2023 · Unity Video Artist">
-          <label>Описание</label>
-          <textarea id="inp-desc-3" placeholder="Что делали, задача, результат..."></textarea>
-          <label>Инструменты (через запятую)</label>
-          <input type="text" id="inp-tools-3" placeholder="Unity, Blender, After Effects">
-          <button class="edit-save-btn" onclick="saveEdit(3)">Сохранить</button>
-        </div>
-        <button class="edit-overlay" onclick="toggleEdit(3)">✏ Редактировать</button>
       </div>
     </div>
 
@@ -762,18 +655,6 @@
         <div class="work-tools" id="tools-4">
           <span class="tool-tag">Unity</span>
         </div>
-        <div class="edit-panel" id="edit-4">
-          <label>Название</label>
-          <input type="text" id="inp-title-4" placeholder="Название проекта">
-          <label>Год</label>
-          <input type="text" id="inp-year-4" placeholder="2023 · Unity Video Artist">
-          <label>Описание</label>
-          <textarea id="inp-desc-4" placeholder="Что делали..."></textarea>
-          <label>Инструменты (через запятую)</label>
-          <input type="text" id="inp-tools-4" placeholder="Unity, ...">
-          <button class="edit-save-btn" onclick="saveEdit(4)">Сохранить</button>
-        </div>
-        <button class="edit-overlay" onclick="toggleEdit(4)">✏ Редактировать</button>
       </div>
     </div>
 
@@ -1277,18 +1158,6 @@
           <span class="tool-tag">After Effects</span>
           <span class="tool-tag">Premiere Pro</span>
         </div>
-        <div class="edit-panel" id="edit-5">
-          <label>Название</label>
-          <input type="text" id="inp-title-5" placeholder="Название проекта">
-          <label>Год</label>
-          <input type="text" id="inp-year-5" placeholder="2021 · E-commerce">
-          <label>Описание</label>
-          <textarea id="inp-desc-5" placeholder="Что делали..."></textarea>
-          <label>Инструменты (через запятую)</label>
-          <input type="text" id="inp-tools-5" placeholder="After Effects, Premiere Pro, ...">
-          <button class="edit-save-btn" onclick="saveEdit(5)">Сохранить</button>
-        </div>
-        <button class="edit-overlay" onclick="toggleEdit(5)">✏ Редактировать</button>
       </div>
     </div>
 
@@ -1309,18 +1178,6 @@
           <span class="tool-tag">After Effects</span>
           <span class="tool-tag">Cinema 4D</span>
         </div>
-        <div class="edit-panel" id="edit-6">
-          <label>Название</label>
-          <input type="text" id="inp-title-6" placeholder="Название проекта">
-          <label>Год</label>
-          <input type="text" id="inp-year-6" placeholder="2021 · E-commerce">
-          <label>Описание</label>
-          <textarea id="inp-desc-6" placeholder="Что делали..."></textarea>
-          <label>Инструменты (через запятую)</label>
-          <input type="text" id="inp-tools-6" placeholder="After Effects, Cinema 4D, ...">
-          <button class="edit-save-btn" onclick="saveEdit(6)">Сохранить</button>
-        </div>
-        <button class="edit-overlay" onclick="toggleEdit(6)">✏ Редактировать</button>
       </div>
     </div>
 
@@ -1340,18 +1197,6 @@
         <div class="work-tools" id="tools-7">
           <span class="tool-tag">After Effects</span>
         </div>
-        <div class="edit-panel" id="edit-7">
-          <label>Название</label>
-          <input type="text" id="inp-title-7" placeholder="Название проекта">
-          <label>Год</label>
-          <input type="text" id="inp-year-7" placeholder="2021 · E-commerce">
-          <label>Описание</label>
-          <textarea id="inp-desc-7" placeholder="Что делали..."></textarea>
-          <label>Инструменты (через запятую)</label>
-          <input type="text" id="inp-tools-7" placeholder="After Effects, ...">
-          <button class="edit-save-btn" onclick="saveEdit(7)">Сохранить</button>
-        </div>
-        <button class="edit-overlay" onclick="toggleEdit(7)">✏ Редактировать</button>
       </div>
     </div>
 
@@ -1447,69 +1292,8 @@
   <span>Made with care ✦</span>
 </footer>
 
-<!-- EDIT MODE BUTTON -->
-<button class="edit-mode-btn" id="editModeBtn" onclick="toggleEditMode()">
-  <div class="edit-dot"></div>
-  Режим редактирования
-</button>
 
 <script>
-// ── Edit mode ──
-let editMode = false;
-
-function toggleEditMode() {
-  editMode = !editMode;
-  const btn = document.getElementById('editModeBtn');
-  const overlays = document.querySelectorAll('.edit-overlay');
-  btn.classList.toggle('active', editMode);
-  btn.innerHTML = editMode
-    ? '<div class="edit-dot"></div> Выйти из редактирования'
-    : '<div class="edit-dot"></div> Режим редактирования';
-  overlays.forEach(o => o.style.display = editMode ? 'block' : 'none');
-  if (!editMode) {
-    document.querySelectorAll('.edit-panel').forEach(p => p.classList.remove('open'));
-  }
-}
-
-function toggleEdit(id) {
-  const panel = document.getElementById('edit-' + id);
-  panel.classList.toggle('open');
-  if (panel.classList.contains('open')) {
-    document.getElementById('inp-title-' + id).value = document.getElementById('title-' + id).textContent.trim();
-    document.getElementById('inp-desc-' + id).value  = document.getElementById('desc-' + id).textContent.trim();
-    // Extract tools
-    const tags = document.querySelectorAll('#tools-' + id + ' .tool-tag');
-    document.getElementById('inp-tools-' + id).value = Array.from(tags).map(t => t.textContent).join(', ');
-    // year
-    const yearEl = document.querySelector('[data-item="year-' + id + '"]');
-  }
-}
-
-function saveEdit(id) {
-  const title = document.getElementById('inp-title-' + id).value;
-  const year  = document.getElementById('inp-year-'  + id).value;
-  const desc  = document.getElementById('inp-desc-'  + id).value;
-  const tools = document.getElementById('inp-tools-' + id).value;
-
-  if (title) document.getElementById('title-' + id).textContent = title;
-  if (desc)  document.getElementById('desc-'  + id).textContent = desc;
-
-  // Update year label (sibling of work-title)
-  const workItem = document.getElementById('title-' + id).closest('.work-info');
-  const yearEl = workItem.querySelector('.work-year');
-  if (year && yearEl) yearEl.textContent = year;
-
-  // Re-render tools
-  if (tools) {
-    const container = document.getElementById('tools-' + id);
-    container.innerHTML = tools.split(',').map(t => t.trim()).filter(Boolean)
-      .map(t => `<span class="tool-tag">${t}</span>`).join('');
-  }
-
-  document.getElementById('edit-' + id).classList.remove('open');
-  saveToStorage();
-}
-
 // ── Video embed ──
 function showUrlForm(wrapId) {
   const wrap = document.getElementById(wrapId);
@@ -1734,9 +1518,6 @@ if (grid) iconObserver.observe(grid);
   setTimeout(tick, 1200);
 })();
 
-// ── Init ──
-// Hide edit overlays by default
-document.querySelectorAll('.edit-overlay').forEach(o => o.style.display = 'none');
 loadFromStorage();
 </script>
 </body>
