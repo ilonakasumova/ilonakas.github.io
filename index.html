@@ -655,7 +655,7 @@
     <!-- === GAMEDEV WORKS === -->
     <div class="work-item fade-in-up" data-category="gamedev" data-subtags="character-animation">
       <div class="work-video-wrap" id="vwrap-1">
-        <video src="videos/battle_lines.mp4" controls playsinline preload="metadata"></video>
+        <video src="videos/battle_lines.mp4#t=0.001" controls playsinline preload="metadata"></video>
       </div>
       <div class="work-info">
         <div class="work-year">2026 · Unity Video Artist</div>
@@ -1536,7 +1536,8 @@ function embedVideo(wrapId) {
   } else if (vimeoMatch) {
     embedHTML = `<iframe src="https://player.vimeo.com/video/${vimeoMatch[1]}" allowfullscreen allow="autoplay; fullscreen"></iframe>`;
   } else if (url.match(/\.mp4|\.webm/i)) {
-    embedHTML = `<video src="${url}" controls playsinline></video>`;
+    const src = url.includes('#') ? url : url + '#t=0.001';
+    embedHTML = `<video src="${src}" controls playsinline></video>`;
   } else {
     alert('Неподдерживаемый формат. Вставьте YouTube, Vimeo или прямую ссылку на .mp4');
     return;
