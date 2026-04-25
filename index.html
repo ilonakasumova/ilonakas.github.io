@@ -1352,7 +1352,7 @@ function render() {
   const filtered = activeSubtag === 'all'
     ? catItems
     : catItems.filter(item => {
-        const tags = (item.dataset.subtags || '').split(',').map(t => t.trim());
+        const tags = (item.dataset.subtags || '').split(/[\s,]+/).map(t => t.trim()).filter(Boolean);
         return tags.includes(activeSubtag);
       });
 
