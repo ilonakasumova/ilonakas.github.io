@@ -184,25 +184,19 @@
 
   .work-item:last-child { border-bottom: 1px solid var(--border); }
 
-  /* ── AGENCY GALLERY MODE ── */
-  .works-list.agency-mode {
-    display: block;
-    columns: 2;
-    column-gap: 1.5rem;
+  /* ── AGENCY GALLERY ── */
+  #agencyGallery { display: none; }
+  .agency-row { display: flex; gap: 1.2rem; align-items: flex-start; }
+  .agency-col { flex: 1; display: flex; flex-direction: column; gap: 1.2rem; }
+  .agency-col img,
+  .agency-col video {
+    width: 100%; display: block;
+    border-radius: 6px;
   }
-  .works-list.agency-mode .work-item {
-    display: block !important;
-    break-inside: avoid;
-    margin-bottom: 1.5rem;
-    padding: 0 !important;
-    border-top: none !important;
-    border-bottom: none !important;
-  }
-  .works-list.agency-mode .work-item:last-child { border-bottom: none !important; }
-  .works-list.agency-mode .work-info { display: none; }
-  .works-list.agency-mode .work-video-wrap {
-    margin: 0 !important;
-    aspect-ratio: 16/9;
+  .agency-col .ratio-1x1  { aspect-ratio: 1/1; }
+  .agency-col .ratio-9x16 { aspect-ratio: 9/16; }
+  @media (max-width: 900px) {
+    .agency-row { flex-direction: column; }
   }
 
   .work-video-wrap {
@@ -1122,138 +1116,34 @@
       </div>
     </div>
 
-    <!-- === AGENCY WORKS === -->
-    <div class="work-item fade-in-up" data-category="agency" data-subtags="media">
-      <div class="work-video-wrap" id="vwrap-e1">
-        <iframe src="https://player.vimeo.com/video/788326630?badge=0&autopause=0" allowfullscreen allow="autoplay; fullscreen"></iframe>
-      </div>
-      <div class="work-info">
-        <div class="work-title">Яндекс Карты</div>
-        <div class="work-desc">Рекламный моушн-ролик.</div>
-        <div class="work-tools">
-          <span class="tool-tag">After Effects</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="work-item fade-in-up" data-category="agency" data-subtags="media">
-      <div class="work-video-wrap" id="vwrap-e2">
-        <iframe src="https://player.vimeo.com/video/788667143?badge=0&autopause=0" allowfullscreen allow="autoplay; fullscreen"></iframe>
-      </div>
-      <div class="work-info">
-        <div class="work-title">Pirates & Puzzles</div>
-        <div class="work-desc">Рекламный моушн-ролик.</div>
-        <div class="work-tools">
-          <span class="tool-tag">After Effects</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="work-item fade-in-up" data-category="agency" data-subtags="media">
-      <div class="work-video-wrap" id="vwrap-e3">
-        <iframe src="https://player.vimeo.com/video/788660165?badge=0&autopause=0" allowfullscreen allow="autoplay; fullscreen"></iframe>
-      </div>
-      <div class="work-info">
-        <div class="work-title">Activia</div>
-        <div class="work-desc">Рекламный моушн-ролик.</div>
-        <div class="work-tools">
-          <span class="tool-tag">After Effects</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="work-item fade-in-up" data-category="agency" data-subtags="media">
-      <div class="work-video-wrap" id="vwrap-e4">
-        <iframe src="https://player.vimeo.com/video/788672429?badge=0&autopause=0" allowfullscreen allow="autoplay; fullscreen"></iframe>
-      </div>
-      <div class="work-info">
-        <div class="work-title">Actimel</div>
-        <div class="work-desc">Рекламный моушн-ролик.</div>
-        <div class="work-tools">
-          <span class="tool-tag">After Effects</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="work-item fade-in-up" data-category="agency" data-subtags="media">
-      <div class="work-video-wrap" id="vwrap-e5">
-        <iframe src="https://player.vimeo.com/video/788674783?badge=0&autopause=0" allowfullscreen allow="autoplay; fullscreen"></iframe>
-      </div>
-      <div class="work-info">
-        <div class="work-title">Покемон</div>
-        <div class="work-desc">Рекламный моушн-ролик.</div>
-        <div class="work-tools">
-          <span class="tool-tag">After Effects</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="work-item fade-in-up" data-category="agency" data-subtags="media">
-      <div class="work-video-wrap" id="vwrap-e6">
-        <iframe src="https://player.vimeo.com/video/788672915?badge=0&autopause=0" allowfullscreen allow="autoplay; fullscreen"></iframe>
-      </div>
-      <div class="work-info">
-        <div class="work-title">igooods</div>
-        <div class="work-desc">Рекламный моушн-ролик.</div>
-        <div class="work-tools">
-          <span class="tool-tag">After Effects</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="work-item fade-in-up" data-category="agency" data-subtags="media">
-      <div class="work-video-wrap" id="vwrap-e7">
-        <iframe src="https://player.vimeo.com/video/788673373?badge=0&autopause=0" allowfullscreen allow="autoplay; fullscreen"></iframe>
-      </div>
-      <div class="work-info">
-        <div class="work-title">Delimobil</div>
-        <div class="work-desc">Рекламный моушн-ролик.</div>
-        <div class="work-tools">
-          <span class="tool-tag">After Effects</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="work-item fade-in-up" data-category="agency" data-subtags="media">
-      <div class="work-video-wrap" id="vwrap-e8">
-        <img src="images/ecom_musicmts.png" alt="MTS Music">
-      </div>
-      <div class="work-info">
-        <div class="work-title">MTS Music</div>
-        <div class="work-desc">Статичный рекламный баннер.</div>
-        <div class="work-tools">
-          <span class="tool-tag">Photoshop</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="work-item fade-in-up" data-category="agency" data-subtags="media">
-      <div class="work-video-wrap" id="vwrap-e9">
-        <img src="images/ecom_banner.jpg" alt="Banner">
-      </div>
-      <div class="work-info">
-        <div class="work-title">Статичный баннер</div>
-        <div class="work-desc">Статичный рекламный баннер.</div>
-        <div class="work-tools">
-          <span class="tool-tag">Photoshop</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="work-item fade-in-up" data-category="agency" data-subtags="media">
-      <div class="work-video-wrap" id="vwrap-e10">
-        <img src="images/ecom_square.png" alt="Banner">
-      </div>
-      <div class="work-info">
-        <div class="work-title">Статичный баннер</div>
-        <div class="work-desc">Статичный рекламный баннер.</div>
-        <div class="work-tools">
-          <span class="tool-tag">Photoshop</span>
-        </div>
-      </div>
-    </div>
 
   </div>
+
+  <!-- === AGENCY GALLERY === -->
+  <div id="agencyGallery">
+    <div class="agency-row">
+
+      <!-- Левая колонка -->
+      <div class="agency-col">
+        <video src="videos/ecom_yandex.mp4#t=0.001" class="ratio-1x1" controls playsinline preload="metadata"></video>
+        <video src="videos/ecom_pirates.mp4#t=0.001" class="ratio-9x16" controls playsinline preload="metadata"></video>
+        <video src="videos/ecom_activia.mp4#t=0.001" class="ratio-1x1" controls playsinline preload="metadata"></video>
+        <video src="videos/ecom_actimel.mp4#t=0.001" class="ratio-1x1" controls playsinline preload="metadata"></video>
+        <img src="images/ecom_square.png">
+        <video src="videos/ecom_pokemon.mp4#t=0.001" class="ratio-9x16" controls playsinline preload="metadata"></video>
+      </div>
+
+      <!-- Правая колонка -->
+      <div class="agency-col">
+        <img src="images/ecom_musicmts.png">
+        <img src="images/ecom_banner.jpg">
+        <video src="videos/ecom_igooods.mp4#t=0.001" class="ratio-9x16" controls playsinline preload="metadata"></video>
+        <video src="videos/ecom_delimobil.mp4#t=0.001" class="ratio-9x16" controls playsinline preload="metadata"></video>
+      </div>
+
+    </div>
+  </div>
+
   <div class="show-more-wrap" id="showMoreWrap" style="display:none;">
     <button class="show-more-btn" id="showMoreBtn" onclick="toggleShowMore()">
       <span>Ещё больше видео</span>
@@ -1491,9 +1381,18 @@ function selectMainTab(btnEl, category) {
   const defaultBtn = document.querySelector(`.subtag-btn[data-subtag="${defaultSubtag}"][data-for="${category}"]`);
   if (defaultBtn) defaultBtn.classList.add('active');
 
-  // Переключение лейаута
+  // Переключение лейаута: gallery для agency, works-list для gamedev
   const worksList = document.getElementById('worksList');
-  worksList.classList.toggle('agency-mode', category === 'agency');
+  const agencyGallery = document.getElementById('agencyGallery');
+  const showMoreWrap = document.getElementById('showMoreWrap');
+  if (category === 'agency') {
+    worksList.style.display = 'none';
+    agencyGallery.style.display = 'block';
+    showMoreWrap.style.display = 'none';
+  } else {
+    worksList.style.display = '';
+    agencyGallery.style.display = 'none';
+  }
 
   render();
 }
