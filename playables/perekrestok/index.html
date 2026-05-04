@@ -3604,9 +3604,16 @@ d.disconnectedCallback=function(){this.removeEventListener("click",this.i,!1);th
 d.C=function(a){this.s(a);this.removeEventListener("touchmove",this.h,!1);this.removeEventListener("touchend",this.j,!1);a=a.changedTouches[0];a={v:a.clientX,A:a.clientY,G:a.screenX,H:a.screenY};u.push(a);setTimeout(v.bind(null,a),2500)};d.D=function(a){a=a.touches[0];this.g=this.g&&10>=Math.abs(this.o-a.clientX)&&10>=Math.abs(this.u-a.clientY)};
 d.B=function(a){var b=this.getAttribute("exit-id"),h=this.getAttribute("product-index"),c=this.getAttribute("exit-override-url");c&&!p("tapareaexit",this,{"exit-id":b,url:c,"product-index":h,"action-event":a.detail}).detail.handled&&(c instanceof q?a=c:(a=c,a instanceof q||(a="object"==typeof a&&a.i?a.h():String(a),t.test(a)||(a="about:invalid#zClosurez"),a=new q(a,r))),n.open(a instanceof q&&a.constructor===q?a.g:"type_error:SafeUrl",""))};customElements.define("gwd-taparea",w);}).call(this);
 </script>
-<style>@keyframes gwd-gen-1n1vgwdanimation_gwd-keyframes{0%,100%{width:105.56%;height:89.06%;left:-2.78%;top:7.81%}}@-webkit-keyframes gwd-gen-1n1vgwdanimation_gwd-keyframes{0%,100%{width:105.56%;height:89.06%;left:-2.78%;top:7.81%}}#slider { top: 60% !important; height: 38% !important; width: 90% !important; left: 5% !important; cursor: grab; }
-#slider::-webkit-slider-thumb { width: 40px; height: 40px; }
-#slider::-moz-range-thumb { width: 40px; height: 40px; }
+<style>
+@keyframes gwd-gen-1n1vgwdanimation_gwd-keyframes{0%,100%{width:105.56%;height:89.06%;left:-2.78%;top:7.81%}}
+@-webkit-keyframes gwd-gen-1n1vgwdanimation_gwd-keyframes{0%,100%{width:105.56%;height:89.06%;left:-2.78%;top:7.81%}}
+@-moz-keyframes gwd-gen-1n1vgwdanimation_gwd-keyframes{0%,100%{width:105.56%;height:89.06%;left:-2.78%;top:7.81%}}
+@keyframes gwd-gen-1n1vgwdanimation_gwd-keyframes_introStart{0%,100%{width:105.56%;height:89.06%;left:-2.78%;top:7.81%}}
+@-webkit-keyframes gwd-gen-1n1vgwdanimation_gwd-keyframes_introStart{0%,100%{width:105.56%;height:89.06%;left:-2.78%;top:7.81%}}
+@-moz-keyframes gwd-gen-1n1vgwdanimation_gwd-keyframes_introStart{0%,100%{width:105.56%;height:89.06%;left:-2.78%;top:7.81%}}
+#slider { top: 70% !important; height: 30% !important; width: 90% !important; left: 5% !important; cursor: grab; touch-action: none; }
+#slider::-webkit-slider-thumb { width: 50px; height: 50px; }
+#slider::-moz-range-thumb { width: 50px; height: 50px; }
 </style></head>
 
 <body>
