@@ -591,6 +591,7 @@
   <div class="filter-tabs" id="mainTabs">
     <button class="filter-btn active" data-filter="gamedev" onclick="selectMainTab(this, 'gamedev')">Gamedev · Unity</button>
     <button class="filter-btn" data-filter="agency" onclick="selectMainTab(this, 'agency')">E-commerce</button>
+    <button class="filter-btn" data-filter="optimization" onclick="selectMainTab(this, 'optimization')">Оптимизация рабочих процессов</button>
   </div>
   <div class="subtags-wrap" id="subtagsWrap">
     <!-- Gamedev subtags -->
@@ -1124,6 +1125,51 @@
       </div>
     </div>
 
+    <!-- === OPTIMIZATION ITEMS === -->
+    <div class="work-item fade-in-up" data-category="optimization" data-subtags="">
+      <div class="work-video-wrap" id="vwrap-opt-1">
+        <div class="video-placeholder">
+          <div class="play-icon">▶</div>
+        </div>
+      </div>
+      <div class="work-info">
+        <div class="work-title" id="title-opt-1">Название проекта</div>
+        <div class="work-desc" id="desc-opt-1">Описание работы.</div>
+        <div class="work-tools" id="tools-opt-1">
+          <span class="tool-tag">After Effects</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-item fade-in-up" data-category="optimization" data-subtags="">
+      <div class="work-video-wrap" id="vwrap-opt-2">
+        <div class="video-placeholder">
+          <div class="play-icon">▶</div>
+        </div>
+      </div>
+      <div class="work-info">
+        <div class="work-title" id="title-opt-2">Название проекта</div>
+        <div class="work-desc" id="desc-opt-2">Описание работы.</div>
+        <div class="work-tools" id="tools-opt-2">
+          <span class="tool-tag">After Effects</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-item fade-in-up" data-category="optimization" data-subtags="">
+      <div class="work-video-wrap" id="vwrap-opt-3">
+        <div class="video-placeholder">
+          <div class="play-icon">▶</div>
+        </div>
+      </div>
+      <div class="work-info">
+        <div class="work-title" id="title-opt-3">Название проекта</div>
+        <div class="work-desc" id="desc-opt-3">Описание работы.</div>
+        <div class="work-tools" id="tools-opt-3">
+          <span class="tool-tag">After Effects</span>
+        </div>
+      </div>
+    </div>
 
   </div>
 
@@ -1397,18 +1443,19 @@ function selectMainTab(btnEl, category) {
 
   // Подтеги — показать нужные для активной вкладки
   const subWrap = document.getElementById('subtagsWrap');
-  subWrap.classList.add('visible');
+  const hasSubtags = document.querySelectorAll(`.subtag-btn[data-for="${category}"]`).length > 0;
+  if (hasSubtags) subWrap.classList.add('visible'); else subWrap.classList.remove('visible');
   document.querySelectorAll('.subtag-btn').forEach(b => {
     b.classList.remove('active');
     b.style.display = b.dataset.for === category ? '' : 'none';
   });
-  // Agency: авто-выбор media; Gamedev: авто-выбор all
+  // Agency: авто-выбор media; остальные: авто-выбор all
   const defaultSubtag = category === 'agency' ? 'media' : 'all';
   activeSubtag = defaultSubtag;
   const defaultBtn = document.querySelector(`.subtag-btn[data-subtag="${defaultSubtag}"][data-for="${category}"]`);
   if (defaultBtn) defaultBtn.classList.add('active');
 
-  // Переключение лейаута: gallery для agency, works-list для gamedev
+  // Переключение лейаута
   const worksList = document.getElementById('worksList');
   const agencyGallery = document.getElementById('agencyGallery');
   const playableGallery = document.getElementById('playableGallery');
