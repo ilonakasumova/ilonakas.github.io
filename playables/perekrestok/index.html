@@ -3605,16 +3605,27 @@ d.C=function(a){this.s(a);this.removeEventListener("touchmove",this.h,!1);this.r
 d.B=function(a){var b=this.getAttribute("exit-id"),h=this.getAttribute("product-index"),c=this.getAttribute("exit-override-url");c&&!p("tapareaexit",this,{"exit-id":b,url:c,"product-index":h,"action-event":a.detail}).detail.handled&&(c instanceof q?a=c:(a=c,a instanceof q||(a="object"==typeof a&&a.i?a.h():String(a),t.test(a)||(a="about:invalid#zClosurez"),a=new q(a,r))),n.open(a instanceof q&&a.constructor===q?a.g:"type_error:SafeUrl",""))};customElements.define("gwd-taparea",w);}).call(this);
 </script>
 <style>
-@keyframes gwd-gen-1n1vgwdanimation_gwd-keyframes{0%,100%{width:105.56%;height:89.06%;left:-2.78%;top:7.81%}}
-@-webkit-keyframes gwd-gen-1n1vgwdanimation_gwd-keyframes{0%,100%{width:105.56%;height:89.06%;left:-2.78%;top:7.81%}}
-@-moz-keyframes gwd-gen-1n1vgwdanimation_gwd-keyframes{0%,100%{width:105.56%;height:89.06%;left:-2.78%;top:7.81%}}
-@keyframes gwd-gen-1n1vgwdanimation_gwd-keyframes_introStart{0%,100%{width:105.56%;height:89.06%;left:-2.78%;top:7.81%}}
-@-webkit-keyframes gwd-gen-1n1vgwdanimation_gwd-keyframes_introStart{0%,100%{width:105.56%;height:89.06%;left:-2.78%;top:7.81%}}
-@-moz-keyframes gwd-gen-1n1vgwdanimation_gwd-keyframes_introStart{0%,100%{width:105.56%;height:89.06%;left:-2.78%;top:7.81%}}
+@keyframes gwd-gen-1n1vgwdanimation_gwd-keyframes{0%,50%,100%{width:105.56%;height:89.06%;left:-2.78%;top:7.81%}}
+@-webkit-keyframes gwd-gen-1n1vgwdanimation_gwd-keyframes{0%,50%,100%{width:105.56%;height:89.06%;left:-2.78%;top:7.81%}}
+@-moz-keyframes gwd-gen-1n1vgwdanimation_gwd-keyframes{0%,50%,100%{width:105.56%;height:89.06%;left:-2.78%;top:7.81%}}
+@keyframes gwd-gen-1n1vgwdanimation_gwd-keyframes_introStart{0%,50%,100%{width:105.56%;height:89.06%;left:-2.78%;top:7.81%}}
+@-webkit-keyframes gwd-gen-1n1vgwdanimation_gwd-keyframes_introStart{0%,50%,100%{width:105.56%;height:89.06%;left:-2.78%;top:7.81%}}
+@-moz-keyframes gwd-gen-1n1vgwdanimation_gwd-keyframes_introStart{0%,50%,100%{width:105.56%;height:89.06%;left:-2.78%;top:7.81%}}
 #slider { top: 70% !important; height: 30% !important; width: 90% !important; left: 5% !important; cursor: grab; touch-action: none; }
 #slider::-webkit-slider-thumb { width: 50px; height: 50px; }
 #slider::-moz-range-thumb { width: 50px; height: 50px; }
-</style></head>
+</style>
+<script>
+window.addEventListener('load', function() {
+  if (window.gwd && gwd.auto_Page1_1IntroEnd) {
+    var _introStarted = false;
+    var _orig = gwd.auto_Page1_1IntroEnd;
+    gwd.auto_Page1_1IntroEnd = function(event) {
+      if (!_introStarted) { _introStarted = true; _orig.call(this, event); }
+    };
+  }
+});
+</script></head>
 
 <body>
   <gwd-google-ad id="gwd-ad" polite-load="">
