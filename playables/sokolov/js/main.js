@@ -23,42 +23,42 @@
   document.body.appendChild(app.canvas);
   
   await Assets.load([
-    './sprites/topText.png',
-    './sprites/bottomText.png',
-    './sprites/icon.png',
-    './sprites/finger.png',
-    './sprites/ring1.png',
-    './sprites/ring2.png',
-    './sprites/ring3.png',
-    './sprites/ring4.png',
-    './sprites/earrings2.png',
-    './sprites/earrings1.png',
-    './sprites/earrings3.png',
-    './sprites/end.png',
-    './sprites/white.png',
-    './sprites/grid.png',
-    './sprites/promoBtn.png'
+    'sprites/topText.png',
+    'sprites/bottomText.png',
+    'sprites/icon.png',
+    'sprites/finger.png',
+    'sprites/ring1.png',
+    'sprites/ring2.png',
+    'sprites/ring3.png',
+    'sprites/ring4.png',
+    'sprites/earrings2.png',
+    'sprites/earrings1.png',
+    'sprites/earrings3.png',
+    'sprites/end.png',
+    'sprites/white.png',
+    'sprites/grid.png',
+    'sprites/promoBtn.png'
   ]);
   
   const moveTextures = [
-    Texture.from('./sprites/ring1.png'),
-    Texture.from('./sprites/earrings1.png'),
-    Texture.from('./sprites/ring2.png'),
-    Texture.from('./sprites/earrings2.png'),
-    Texture.from('./sprites/ring3.png'),
-    Texture.from('./sprites/earrings3.png'),
-    Texture.from('./sprites/ring4.png'),
-    Texture.from('./sprites/earrings1.png'),
-    Texture.from('./sprites/ring1.png')
+    Texture.from('sprites/ring1.png'),
+    Texture.from('sprites/earrings1.png'),
+    Texture.from('sprites/ring2.png'),
+    Texture.from('sprites/earrings2.png'),
+    Texture.from('sprites/ring3.png'),
+    Texture.from('sprites/earrings3.png'),
+    Texture.from('sprites/ring4.png'),
+    Texture.from('sprites/earrings1.png'),
+    Texture.from('sprites/ring1.png')
   ]
   
   Assets.addBundle('fonts', [
-    { alias: 'Sokolov', src: './fonts/sokolov.woff' },
+    { alias: 'Sokolov', src: 'fonts/sokolov.woff' },
   ]);
 
   await Assets.loadBundle('fonts');
   
-  const backgroundTexture = Texture.from('./sprites/white.png')
+  const backgroundTexture = Texture.from('sprites/white.png')
   backgroundTexture.source.scaleMode = 'nearest';
   const backgroundImage = new Sprite(backgroundTexture);
   backgroundImage.anchor.set(0.5);
@@ -66,7 +66,7 @@
   backgroundImage.x = APP_WIDTH / 2;
   app.stage.addChild(backgroundImage);
 
-  const endTexture = Texture.from('./sprites/end.png');
+  const endTexture = Texture.from('sprites/end.png');
   endTexture.source.scaleMode = 'nearest';
   const endImage = new Sprite(endTexture);
   const endContainer = new Container();
@@ -107,7 +107,7 @@
     });
   }
   
-  const promoBtnTexture = Texture.from('./sprites/promoBtn.png');
+  const promoBtnTexture = Texture.from('sprites/promoBtn.png');
   promoBtnTexture.source.scaleMode = 'linear';
   const promoBtn = new Sprite(promoBtnTexture);
   promoBtn.anchor.set(0.5);
@@ -136,9 +136,9 @@
     moveTextures[i].source.scaleMode = 'nearest';
   }
 
-  const cellTexture = Texture.from('./sprites/grid.png')
+  const cellTexture = Texture.from('sprites/grid.png')
 
-  const gridTexture = Texture.from('./sprites/grid.png');
+  const gridTexture = Texture.from('sprites/grid.png');
   gridTexture.source.scaleMode = 'nearest';
   const gridImage = new Sprite(gridTexture);
   gridImage.anchor.set(0.5);
@@ -148,7 +148,7 @@
   gridImage.alpha = 0;
   app.stage.addChild(gridImage);
 
-  const topTextTexture = Texture.from('./sprites/topText.png');
+  const topTextTexture = Texture.from('sprites/topText.png');
   topTextTexture.source.scaleMode = 'nearest';
   const topText = new Sprite({
       texture: topTextTexture
@@ -161,7 +161,7 @@
   topText.scale.x = topText.scale.y = 1;
   app.stage.addChild(topText);
   topText.alpha = 0
-  const bottomTextTexture = Texture.from('./sprites/bottomText.png');
+  const bottomTextTexture = Texture.from('sprites/bottomText.png');
   bottomTextTexture.source.scaleMode = 'nearest';
   const bottomText = new Sprite({
       texture: bottomTextTexture
@@ -175,7 +175,7 @@
   bottomText.alpha = 0
   app.stage.addChild(bottomText);
   
-  const iconTexture = Texture.from('./sprites/icon.png');
+  const iconTexture = Texture.from('sprites/icon.png');
   iconTexture.source.scaleMode = 'nearest';
   const icon = new Sprite ({
     texture: iconTexture
@@ -215,7 +215,7 @@
     }
   }
   
-  const fingerTexture = Texture.from('./sprites/finger.png');
+  const fingerTexture = Texture.from('sprites/finger.png');
   fingerTexture.source.scaleMode = 'linear';
   const finger = new Sprite ({
     texture: fingerTexture
@@ -464,5 +464,7 @@
     }
   }
 })();
+
+
 
 
