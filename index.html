@@ -602,6 +602,7 @@
     <button class="subtag-btn" data-subtag="level-custom" data-for="gamedev">Кастомизация уровня</button>
     <!-- Agency subtags -->
     <button class="subtag-btn active" data-subtag="media" data-for="agency" style="display:none">Видео и статика</button>
+    <button class="subtag-btn" data-subtag="playable" data-for="agency" style="display:none">Playable Ads</button>
   </div>
 
   <div class="works-list" id="worksList">
@@ -1158,6 +1159,13 @@
     </div>
   </div>
 
+  <!-- === PLAYABLE ADS GALLERY === -->
+  <div id="playableGallery" style="display:none;">
+    <div class="agency-row">
+      <!-- Плееблы будут добавлены сюда -->
+    </div>
+  </div>
+
   <div class="show-more-wrap" id="showMoreWrap" style="display:none;">
     <button class="show-more-btn" id="showMoreBtn" onclick="toggleShowMore()">
       <span>Ещё больше видео</span>
@@ -1398,14 +1406,17 @@ function selectMainTab(btnEl, category) {
   // Переключение лейаута: gallery для agency, works-list для gamedev
   const worksList = document.getElementById('worksList');
   const agencyGallery = document.getElementById('agencyGallery');
+  const playableGallery = document.getElementById('playableGallery');
   const showMoreWrap = document.getElementById('showMoreWrap');
   if (category === 'agency') {
     worksList.style.display = 'none';
     agencyGallery.style.display = 'block';
+    playableGallery.style.display = 'none';
     showMoreWrap.style.display = 'none';
   } else {
     worksList.style.display = '';
     agencyGallery.style.display = 'none';
+    playableGallery.style.display = 'none';
   }
 
   render();
@@ -1418,6 +1429,20 @@ document.querySelectorAll('.subtag-btn').forEach(btn => {
     btn.classList.add('active');
     activeSubtag = btn.dataset.subtag;
     currentVisible = VISIBLE_COUNT;
+
+    // Переключение галерей для agency
+    if (activeCategory === 'agency') {
+      const ag = document.getElementById('agencyGallery');
+      const pg = document.getElementById('playableGallery');
+      if (activeSubtag === 'playable') {
+        ag.style.display = 'none';
+        pg.style.display = 'block';
+      } else {
+        ag.style.display = 'block';
+        pg.style.display = 'none';
+      }
+    }
+
     render();
   });
 });
