@@ -204,10 +204,38 @@
   .agency-col iframe {
     width: 100%; display: block;
     border-radius: 6px;
+    border: none;
   }
   .agency-col .ratio-1x1  { aspect-ratio: 1/1; }
   .agency-col .ratio-9x16 { aspect-ratio: 9/16; }
   .agency-col iframe { height: auto; }
+  .gdrive-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    background: var(--bg3);
+    width: 100%;
+    display: block;
+  }
+  .gdrive-wrap iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+    border-radius: 0;
+  }
+  .gdrive-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 72px; height: 46px;
+    background: var(--bg3);
+    z-index: 5;
+    border-radius: 0 6px 0 0;
+    pointer-events: auto;
+  }
   @media (max-width: 900px) {
     .agency-row { flex-direction: column; }
   }
@@ -1028,27 +1056,27 @@
 
       <!-- Колонка 1 -->
       <div class="agency-col">
-        <iframe src="https://drive.google.com/file/d/1cArc02WdE1gEIl1ujYmfsIlpo-WDJoO3/preview" class="ratio-1x1" allowfullscreen></iframe>
-        <iframe src="https://drive.google.com/file/d/1IfXNSUeWTiPsyJZbyjasLvXcs6PEAXmE/preview" class="ratio-1x1" allowfullscreen></iframe>
-        <iframe src="https://drive.google.com/file/d/11TmaMZU8s3BM3AhbMprFh_3XIw16SNBo/preview" class="ratio-9x16" allowfullscreen></iframe>
-        <iframe src="https://drive.google.com/file/d/1QQQwzYvYufwc2ehKnIZfbDCD2ktmN0VK/preview" class="ratio-9x16" allowfullscreen></iframe>
-        <iframe src="https://drive.google.com/file/d/1ZgE94N5m-q3lljL1mR3nJmaJTzMKfmbW/preview" class="ratio-9x16" allowfullscreen></iframe>
+        <div class="gdrive-wrap ratio-1x1"><iframe src="https://drive.google.com/file/d/1cArc02WdE1gEIl1ujYmfsIlpo-WDJoO3/preview" allowfullscreen></iframe></div>
+        <div class="gdrive-wrap ratio-1x1"><iframe src="https://drive.google.com/file/d/1IfXNSUeWTiPsyJZbyjasLvXcs6PEAXmE/preview" allowfullscreen></iframe></div>
+        <div class="gdrive-wrap ratio-9x16"><iframe src="https://drive.google.com/file/d/11TmaMZU8s3BM3AhbMprFh_3XIw16SNBo/preview" allowfullscreen></iframe></div>
+        <div class="gdrive-wrap ratio-9x16"><iframe src="https://drive.google.com/file/d/1QQQwzYvYufwc2ehKnIZfbDCD2ktmN0VK/preview" allowfullscreen></iframe></div>
+        <div class="gdrive-wrap ratio-9x16"><iframe src="https://drive.google.com/file/d/1ZgE94N5m-q3lljL1mR3nJmaJTzMKfmbW/preview" allowfullscreen></iframe></div>
       </div>
 
       <!-- Колонка 2 -->
       <div class="agency-col">
-        <iframe src="https://drive.google.com/file/d/1BSYtj-v8V75HgvhAdxaDvmWxFD5fWgtP/preview" class="ratio-9x16" allowfullscreen></iframe>
+        <div class="gdrive-wrap ratio-9x16"><iframe src="https://drive.google.com/file/d/1BSYtj-v8V75HgvhAdxaDvmWxFD5fWgtP/preview" allowfullscreen></iframe></div>
         <img src="images/ecom_zolotoe.png">
-        <iframe src="https://drive.google.com/file/d/1MmudaGUvhpQP_FoVKPyTRsIp3-KJuHn3/preview" class="ratio-9x16" allowfullscreen></iframe>
-        <iframe src="https://drive.google.com/file/d/1tw9g0MJ6awOwnub3QtH8T_o9RXuL_w8B/preview" class="ratio-9x16" allowfullscreen></iframe>
+        <div class="gdrive-wrap ratio-9x16"><iframe src="https://drive.google.com/file/d/1MmudaGUvhpQP_FoVKPyTRsIp3-KJuHn3/preview" allowfullscreen></iframe></div>
+        <div class="gdrive-wrap ratio-9x16"><iframe src="https://drive.google.com/file/d/1tw9g0MJ6awOwnub3QtH8T_o9RXuL_w8B/preview" allowfullscreen></iframe></div>
       </div>
 
       <!-- Колонка 3 -->
       <div class="agency-col">
         <img src="images/ecom_musicmts.png">
-        <iframe src="https://drive.google.com/file/d/12JFBZFhWmKgW4Dsynp7q_Na6X-8-Qy9W/preview" class="ratio-9x16" allowfullscreen></iframe>
-        <iframe src="https://drive.google.com/file/d/1BmdQheOB8BmOhk0sbwl2zFEYpjlRXLVq/preview" class="ratio-9x16" allowfullscreen></iframe>
-        <iframe src="https://drive.google.com/file/d/1i3DPBjlvwM9ouI_HkycdIv5Vnc0EeAYg/preview" class="ratio-1x1" allowfullscreen></iframe>
+        <div class="gdrive-wrap ratio-9x16"><iframe src="https://drive.google.com/file/d/12JFBZFhWmKgW4Dsynp7q_Na6X-8-Qy9W/preview" allowfullscreen></iframe></div>
+        <div class="gdrive-wrap ratio-9x16"><iframe src="https://drive.google.com/file/d/1BmdQheOB8BmOhk0sbwl2zFEYpjlRXLVq/preview" allowfullscreen></iframe></div>
+        <div class="gdrive-wrap ratio-1x1"><iframe src="https://drive.google.com/file/d/1i3DPBjlvwM9ouI_HkycdIv5Vnc0EeAYg/preview" allowfullscreen></iframe></div>
       </div>
 
     </div>
