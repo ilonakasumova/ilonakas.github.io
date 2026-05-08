@@ -1296,17 +1296,6 @@ document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
   setTimeout(tick, 1200);
 })();
 
-document.querySelectorAll('video').forEach(v => { v.volume = 0.5; });
-
-// Poster + preload=none для всех контрольных видео
-document.querySelectorAll('video[controls]').forEach(v => {
-  const src = v.src || v.getAttribute('src') || '';
-  const m = src.match(/videos\/([^.#]+)\.mp4/);
-  if (m) {
-    v.poster = 'posters/' + m[1] + '.jpg';
-    v.preload = 'none';
-  }
-});
 </script>
 </body>
 </html>
