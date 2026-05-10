@@ -510,6 +510,31 @@
   .software-item:hover .software-label {
     color: var(--text);
   }
+
+  /* ── LANG TOGGLE ── */
+  .lang-toggle {
+    position: absolute;
+    right: 3rem;
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: 'Akkurat', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.85rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    line-height: 1;
+  }
+  .lang-toggle:hover {
+    color: var(--text);
+    border-color: rgba(255,255,255,0.25);
+  }
+  @media (max-width: 600px) {
+    .lang-toggle { right: 1rem; padding: 0.3rem 0.65rem; }
+  }
 </style>
 </head>
 <body>
@@ -517,10 +542,11 @@
 <!-- NAV -->
 <nav>
   <ul class="nav-links">
-    <li><a href="#works">Работы</a></li>
-    <li><a href="#about">Обо мне</a></li>
-    <li><a href="#contact">Контакты</a></li>
+    <li><a href="#works" data-i18n="nav-works">Работы</a></li>
+    <li><a href="#about" data-i18n="nav-about">Обо мне</a></li>
+    <li><a href="#contact" data-i18n="nav-contact">Контакты</a></li>
   </ul>
+  <button class="lang-toggle" id="langToggle" onclick="toggleLang()">EN</button>
 </nav>
 
 <!-- HERO -->
@@ -528,11 +554,11 @@
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-content">
-    <h1 class="hero-title">Илона Касумова</h1>
+    <h1 class="hero-title" data-i18n="hero-name">Илона Касумова</h1>
     <div class="hero-role-line">
       <span class="typewriter" id="typewriter"></span>
     </div>
-    <p class="hero-desc">
+    <p class="hero-desc" data-i18n="hero-desc">
       Моушн дизайнер с опытом работы в рекламе и мобильном геймдеве. Выполнила более 900 коммерческих заказов для различных агентств. Разработала рекламные креативы для более чем 30 мобильных игр.
     </p>
   </div>
@@ -540,23 +566,23 @@
 
 <!-- WORKS -->
 <section id="works">
-  <h2 class="section-title">Работы</h2>
+  <h2 class="section-title" data-i18n="section-works">Работы</h2>
 
   <div class="filter-tabs" id="mainTabs">
     <button class="filter-btn active" data-filter="gamedev" onclick="selectMainTab(this, 'gamedev')">Gamedev · Unity</button>
     <button class="filter-btn" data-filter="agency" onclick="selectMainTab(this, 'agency')">E-commerce</button>
-    <button class="filter-btn" data-filter="optimization" onclick="selectMainTab(this, 'optimization')">Оптимизация</button>
+    <button class="filter-btn" data-filter="optimization" onclick="selectMainTab(this, 'optimization')" data-i18n="tab-optimization">Оптимизация</button>
   </div>
   <div class="subtags-wrap" id="subtagsWrap">
     <!-- Gamedev subtags -->
-    <button class="subtag-btn active" data-subtag="all" data-for="gamedev">Все работы</button>
+    <button class="subtag-btn active" data-subtag="all" data-for="gamedev" data-i18n="subtag-all">Все работы</button>
     <button class="subtag-btn" data-subtag="animation" data-for="gamedev">Animation</button>
-    <button class="subtag-btn" data-subtag="game-mods" data-for="gamedev">Моды с заменой логики игры</button>
+    <button class="subtag-btn" data-subtag="game-mods" data-for="gamedev" data-i18n="subtag-mods">Моды с заменой логики игры</button>
     <button class="subtag-btn" data-subtag="unity-cam" data-for="gamedev">Unity Cam</button>
     <button class="subtag-btn" data-subtag="vfx" data-for="gamedev">VFX</button>
-    <button class="subtag-btn" data-subtag="level-custom" data-for="gamedev">Кастомизация уровня</button>
+    <button class="subtag-btn" data-subtag="level-custom" data-for="gamedev" data-i18n="subtag-level">Кастомизация уровня</button>
     <!-- Agency subtags -->
-    <button class="subtag-btn active" data-subtag="media" data-for="agency" style="display:none">Видео и статика</button>
+    <button class="subtag-btn active" data-subtag="media" data-for="agency" style="display:none" data-i18n="subtag-media">Видео и статика</button>
     <button class="subtag-btn" data-subtag="playable" data-for="agency" style="display:none">Playable Ads</button>
   </div>
 
@@ -1020,20 +1046,20 @@
   <h2 class="section-title">About</h2>
   <div class="about-grid fade-in-up">
     <div class="about-text">
-      <p>
+      <p id="about-p1">
         В 2021 году работала в рекламном агентстве полного цикла — создавала баннеры, моушн-графику
         и плееблы для крупных брендов. С 2023 года работаю в gamedev: разрабатываю
         <strong>видеоконтент для мобильных игр</strong>: запись геймплея, базовый скриптинг,
         модификация внутриигровых уровней и внутриигровых объектов (моделинг/текстуринг базового уровня).
       </p>
-      <p>
+      <p id="about-p2">
         С 2023 по 2025 год была ведущим моушеном проектов
         <span style="color:#fff;font-weight:600;">Stack Ball</span>,
         <span style="color:#fff;font-weight:600;">S.T.A.R</span>,
         <span style="color:#fff;font-weight:600;">Go Escape</span>
         (большая часть рекламных креативов по проектам за этот промежуток времени были сделаны мной).
       </p>
-      <p>
+      <p id="about-p3">
         Люблю оптимизировать процессы, сочетать технический подход с творческим процессом.
       </p>
 
@@ -1046,14 +1072,14 @@
         <div class="tl-item">
           <div class="tl-period">2021 — 2022</div>
           <div class="tl-role">Motion Designer / Banner Maker</div>
-          <div class="tl-company">E-commerce полного цикла · CityAds</div>
+          <div class="tl-company" id="tl-cityads">E-commerce полного цикла · CityAds</div>
 </div>
       </div>
     </div>
 
     <div class="skills-blocks fade-in-up">
       <div class="skills-category">
-        <h4>Видео и анимация</h4>
+        <h4 data-i18n="skills-video">Видео и анимация</h4>
         <div class="skills-wrap">
           <span class="skill-item">After Effects</span>
           <span class="skill-item">Premiere Pro</span>
@@ -1072,7 +1098,7 @@
         </div>
       </div>
       <div class="skills-category">
-        <h4>3D и дизайн</h4>
+        <h4 data-i18n="skills-3d">3D и дизайн</h4>
         <div class="skills-wrap">
           <span class="skill-item">Blender</span>
           <span class="skill-item">Photoshop</span>
@@ -1088,8 +1114,8 @@
 <section id="contact">
   <div class="contact-inner">
     <a href="mailto:uuuvuvuuvuv@gmail.com" class="contact-email">uuuvuvuuvuv@gmail.com</a>
-    <h2 class="section-title">Давайте работать вместе</h2>
-    <p>Открыта для новых проектов — рекламные ролики, геймдев, моушн-графика.</p>
+    <h2 class="section-title" data-i18n="contact-title">Давайте работать вместе</h2>
+    <p data-i18n="contact-p">Открыта для новых проектов — рекламные ролики, геймдев, моушн-графика.</p>
   </div>
 </section>
 
@@ -1103,6 +1129,139 @@
 <script>
 // ── Очистка устаревших данных localStorage ──
 try { localStorage.removeItem('portfolio_data'); } catch(e) {}
+
+// ── i18n ──
+let currentLang = (function() { try { return localStorage.getItem('lang') || 'ru'; } catch(e) { return 'ru'; } })();
+
+const LANG = {
+  ru: {
+    'nav-works': 'Работы', 'nav-about': 'Обо мне', 'nav-contact': 'Контакты',
+    'hero-name': 'Илона Касумова',
+    'hero-desc': 'Моушн дизайнер с опытом работы в рекламе и мобильном геймдеве. Выполнила более 900 коммерческих заказов для различных агентств. Разработала рекламные креативы для более чем 30 мобильных игр.',
+    'section-works': 'Работы',
+    'tab-optimization': 'Оптимизация',
+    'subtag-all': 'Все работы', 'subtag-mods': 'Моды с заменой логики игры', 'subtag-level': 'Кастомизация уровня', 'subtag-media': 'Видео и статика',
+    'skills-video': 'Видео и анимация', 'skills-3d': '3D и дизайн',
+    'contact-title': 'Давайте работать вместе',
+    'contact-p': 'Открыта для новых проектов — рекламные ролики, геймдев, моушн-графика.',
+    'lang-btn': 'EN',
+    'typewriter-roles': ['Моушн Дизайнер', 'Unity Video Artist'],
+    'show-more': (n) => `Ещё ${n} видео`,
+    'desc-1': 'Полностью фейковый 2D ролик для мобильной игры Battle Lines. Анимация персонажей и сцен выполнена в After Effects, с использованием техники non-linear анимации в плагине Duik Angela.',
+    'desc-2': 'Фейковый 2D креатив. Опенинг сгенерирован в Higgsfield AI, анимация последующего геймплея собрана в After Effects.',
+    'desc-3': 'Динамичный трейлер с демонстрацией игровых уровней. Расставила несколько камер по сцене в Unity и анимировала каждую для создания динамичного монтажа.',
+    'desc-4': 'Креатив для азиатского рынка. Заменила фоны на игровых уровнях на кастомные PNG-картинки внутри Unity, добавила VFX-партиклы при разрушении башни.',
+    'desc-5': 'Кастомный мод с переработкой игровой механики. Расширила управление автомобилем: добавила движение влево/вправо через WASD вместо стандартного движения только вперёд. Разработала и разместила на уровне новые препятствия, пешехода заригала и анимировала в движке, задала траекторию движения через PathToFollow. При столкновении с препятствиями реализовала анимацию аварии и логику рестарта уровня.',
+    'desc-6': 'Фейковый 2D креатив. Анимация персонажей выполнена в After Effects с использованием риггинга Duik Angela и инструмента Puppet Pin.',
+    'desc-7': 'Кастомный креатив с анимированными 3D-персонажами. Риггинг и анимация выполнены в Blender, все уровни кастомизированы внутри Unity. Дополнительно добавила сундук на уровень и анимировала его открытие в движке.',
+    'desc-8': 'Динамичный трейлер для плей-стора, расставила несколько камер по локации для динамичной записи ГП.',
+    'desc-9': 'Кастомный морской уровень, полностью собранный в Unity. Создала окружение с шейдером воды, заригала и анимировала подводных персонажей, после чего интегрировала их в движок.',
+    'desc-10': 'Фейковый креатив с интеграцией 3D моделей на уровень вместо игрового лайна. Реализовала анимацию падения объектов и добавила VFX-партиклы взрыва при столкновении с врагами и поверхностями.',
+    'desc-11': 'Фейковый опенинг, реализованный в Unity. Анимацию тошноты главного персонажа создала и перенесла в движок. Внутри движка добавила партиклы тошноты через Particle System.',
+    'desc-12': 'Кастомный мод с расширением игровой механики: добавила на уровень поля продажи и апгрейда, внедрив в уровень новую логику взаимодействия трактора с игровым пространством.',
+    'desc-13': 'Фейковый 2D ролик, имитирующий игровой геймплей. Полностью выполнен в After Effects.',
+    'desc-14': 'Кастомный мод: заменила стандартный игровой мяч на PNG-спрайт мемного кота с реактивной анимацией — выражение морды меняется при каждом столкновении с платформами башни. Логика смены спрайтов написана на C# в Unity.',
+    'desc-15': 'Вся статичная графика сгенерирована с помощью ИИ. Персонажам добавлена лёгкая idle-анимация через Puppet Pins в After Effects.',
+    'desc-16': 'Кастомный мод с изменением базовой механики роста персонажа: модифицировала логику так, чтобы при поедании определённой еды персонаж уменьшался, а не увеличивался. Изменения реализованы на C# в Unity.',
+    'desc-17': 'Написала скрипт камеры в Unity, заменила стандартную статичную внутриигровую камеру кастомной. Камера динамически следует за шариком и поддерживает плавное приближение/отдаление относительно объекта.',
+    'desc-18': 'Кастомизация уровня в Unity: добавила интерактивный 3D-бэкграунд и volumetric fog.',
+    'desc-19': 'Заригала и анимировала персонажа в Blender, после чего интегрировала его в движок Unity с кастомизацией уровня.',
+    'desc-20': 'Тематический креатив под вселенную Fallout: заменила внутриигровые кристаллы на бутылки Nuka-Cola, персонажам переназначила текстуры одежды на комбинезоны выходцев из убежища.',
+    'desc-21': 'Динамичный трейлер с демонстрацией игровых уровней. Расставила несколько камер по игровой локации и анимировала их для получения динамичных кадров.',
+    'desc-22': 'Кастомный уровень в тематике фильма Wonka. Интегрировала 3D-объекты в движок и расставила их по локации. Текстуры отредактированы в Blender и Unity для достижения однородного визуального стиля уровня.',
+    'desc-23': 'Кастомный уровень с мишками: заригала персонажей и расставила по локации в Blender. Разработала мультяшные текстуры, стилизованные под визуальный язык игры.',
+    'desc-24': 'Анимированный фон для уровня, выполненный в Blender 3D.',
+    'desc-25': 'Написала скрипт для опенинга с фейковым паззловым подходом — быстрая реализация через программную логику вместо ручной анимации.',
+    'desc-opt-1': 'Разработала и внедрила в рабочий процесс отдела скрипт для автоматической нарезки видео по хронометражу и формату. Рутинный рендер множества размеров и хронов одного ролика занимал значительное время команды — скрипт сократил его до нескольких секунд. Достаточно загрузить исходник, и инструмент автоматически генерирует все версии согласно регламенту.',
+    'desc-opt-2': 'Скрипт для After Effects, автоматизирующий создание шаблонных композиций под любое количество разрешений и хронометражей. Задаётся Master Comp произвольного размера, после чего по нажатию кнопки Generate скрипт прогоняет цикл: для каждого разрешения создаётся нужное количество композиций с регламентированным неймингом, в каждую автоматически вставляется Master Comp с ресайзом под заданные рамки. Параллельно в проекте формируется стандартизированная иерархия папок для сбора ресурсов — звуки, композиции, видеоряд, изображения и т.д.',
+    'about-p1': 'В 2021 году работала в рекламном агентстве полного цикла — создавала баннеры, моушн-графику и плееблы для крупных брендов. С 2023 года работаю в gamedev: разрабатываю <strong>видеоконтент для мобильных игр</strong>: запись геймплея, базовый скриптинг, модификация внутриигровых уровней и внутриигровых объектов (моделинг/текстуринг базового уровня).',
+    'about-p2': 'С 2023 по 2025 год была ведущим моушеном проектов <span style="color:#fff;font-weight:600;">Stack Ball</span>, <span style="color:#fff;font-weight:600;">S.T.A.R</span>, <span style="color:#fff;font-weight:600;">Go Escape</span> (большая часть рекламных креативов по проектам за этот промежуток времени были сделаны мной).',
+    'about-p3': 'Люблю оптимизировать процессы, сочетать технический подход с творческим процессом.',
+    'tl-cityads': 'E-commerce полного цикла · CityAds',
+  },
+  en: {
+    'nav-works': 'Works', 'nav-about': 'About', 'nav-contact': 'Contact',
+    'hero-name': 'Ilona Kasumova',
+    'hero-desc': 'Motion designer specializing in mobile advertising. 900+ ad creatives delivered across gaming, e-commerce, and other verticals — including work on 30+ mobile games.',
+    'section-works': 'Works',
+    'tab-optimization': 'Optimization',
+    'subtag-all': 'All Works', 'subtag-mods': 'Custom Mods', 'subtag-level': 'Level Design', 'subtag-media': 'Video & Statics',
+    'skills-video': 'Video & Animation', 'skills-3d': '3D & Design',
+    'contact-title': "Let's work together",
+    'contact-p': 'Available for new projects — ad creatives, gamedev, motion graphics.',
+    'lang-btn': 'RU',
+    'typewriter-roles': ['Motion Designer', 'Unity Video Artist'],
+    'show-more': (n) => `${n} more videos`,
+    'desc-1': "A fully fake 2D ad creative for Battle Lines — character and scene animation built in After Effects using Duik Angela's non-linear animation workflow.",
+    'desc-2': 'A fake 2D ad creative — opening scene generated in Higgsfield AI, gameplay animation built in After Effects.',
+    'desc-3': 'A dynamic trailer built entirely in Unity — set up multiple cameras across the scene and animated each cut to capture the energy of the levels.',
+    'desc-4': 'A custom ad creative for the Asian market — replaced in-game level backgrounds with custom PNG assets in Unity and added VFX particle effects on tower destruction.',
+    'desc-5': 'A custom mod with reworked game mechanics — expanded the car controls to support left/right movement via WASD instead of the default forward-only input. Designed and placed new obstacles on the level, rigged and animated a pedestrian directly in the engine with a path-based movement via PathToFollow. On collision with obstacles, implemented a crash animation and level restart logic.',
+    'desc-6': 'A fake 2D ad — character animation done in After Effects using Duik Angela and the Puppet Pin tool.',
+    'desc-7': 'A custom ad creative featuring animated 3D characters — rigged and animated in Blender, with all levels customized directly in Unity. Also added a chest to the level and animated its opening sequence in the engine.',
+    'desc-8': 'A dynamic gameplay trailer — set up multiple cameras across the level to capture fast-paced gameplay from different angles.',
+    'desc-9': 'A custom ocean level built entirely in Unity — created the environment with a water shader, rigged and animated underwater characters, then integrated them into the engine.',
+    'desc-10': 'A fake ad creative featuring 3D models integrated into the level in place of the in-game drawing line — implemented falling object animations and added VFX explosion particles on impact with enemies and surfaces.',
+    'desc-11': "A fake 3D-opening built in Unity — created and imported the main character's nausea animation into the engine, then added vomit particle effects via Unity's Particle System.",
+    'desc-12': 'A custom mod expanding the core game mechanic — added sell and upgrade field triggers to the level, implementing new interaction logic between the tractor and the game environment.',
+    'desc-13': 'A fake 2D ad creative simulating in-game gameplay, built entirely in After Effects.',
+    'desc-14': "A custom mod replacing the default ball with a meme cat PNG sprite — implemented reactive sprite-swapping logic in C# so the cat's expression updates on each platform collision.",
+    'desc-15': 'All visuals AI-generated via ChatGPT. Subtle idle animations applied to characters via Puppet Pins in After Effects.',
+    'desc-16': 'A custom mod that reworks the core growth mechanic — modified the character scaling logic in C# so that eating certain food items causes the character to shrink rather than grow.',
+    'desc-17': 'Built a custom camera script in Unity to replace the default static in-game camera — dynamically follows the ball with configurable smooth zoom relative to the target object.',
+    'desc-18': 'A custom level built in Unity — added an interactive 3D background and volumetric fog to the scene.',
+    'desc-19': 'Rigged and animated a character in Blender, then integrated it into Unity.',
+    'desc-20': "A Fallout-themed custom creative — swapped the in-game crystals for Nuka-Cola bottles and retexured the characters' outfits with Vault Dweller suits in Unity.",
+    'desc-21': 'A dynamic level showcase trailer built in Unity — placed and animated multiple cameras across the scene to capture fast-paced footage from different angles.',
+    'desc-22': 'A Wonka-themed custom level built in Unity — integrated and placed 3D assets across the scene, with textures refined in both Blender and Unity to achieve a cohesive visual style.',
+    'desc-23': 'A custom level featuring bear characters — rigged each one individually in Blender and placed them throughout the scene. Designed hand-crafted cartoon textures to match the game\'s existing visual style.',
+    'desc-24': 'A custom animated level background made in Blender 3D.',
+    'desc-25': 'A fake puzzle opening built with a custom script — programmatic logic instead of manual animation for faster and more scalable execution.',
+    'desc-opt-1': "Developed and integrated a script into the department's workflow to automate video rendering across required formats and durations. Reduced a time-consuming manual export process to seconds — upload the source file and the tool outputs all required versions automatically.",
+    'desc-opt-2': 'An After Effects script automating the creation of template compositions across multiple resolutions and durations. Takes a Master Comp of any size as input — on Generate, the script creates the required number of compositions per resolution with standardized naming, nests the Master Comp into each with correct scaling, and builds a standardized asset folder hierarchy within the project.',
+    'about-p1': 'In 2021, worked at a full-cycle advertising agency producing banners, motion graphics, and playable-ads for major brands. Since 2023, focused on mobile gamedev advertising — creating <strong>ad creatives</strong> for mobile games, doing engine-level work in Unity: basic C# scripting for video production, in-game level modification, and asset integration.',
+    'about-p2': 'From 2023 to 2025, worked as lead motion designer on <span style="color:#fff;font-weight:600;">Stack Ball</span>, <span style="color:#fff;font-weight:600;">S.T.A.R.</span>, and <span style="color:#fff;font-weight:600;">Go Escape</span>, handling the majority of ad creatives across all three projects.',
+    'about-p3': 'Eager to optimize workflows and keep the balance between technical approach and creative work.',
+    'tl-cityads': 'Full-cycle E-commerce · CityAds',
+  }
+};
+
+const I18N_IDS = [
+  'desc-1','desc-2','desc-3','desc-4','desc-5','desc-6','desc-7','desc-8','desc-9','desc-10',
+  'desc-11','desc-12','desc-13','desc-14','desc-15','desc-16','desc-17','desc-18','desc-19','desc-20',
+  'desc-21','desc-22','desc-23','desc-24','desc-25','desc-opt-1','desc-opt-2',
+  'about-p1','about-p2','about-p3','tl-cityads'
+];
+
+let typewriterReset = null;
+
+function applyLang(lang) {
+  currentLang = lang;
+  try { localStorage.setItem('lang', lang); } catch(e) {}
+  document.documentElement.lang = lang;
+  const L = LANG[lang];
+  // Toggle button label
+  const btn = document.getElementById('langToggle');
+  if (btn) btn.textContent = L['lang-btn'];
+  // data-i18n elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = L[el.dataset.i18n];
+    if (v !== undefined) el.innerHTML = v;
+  });
+  // ID-based elements (descriptions, about paragraphs)
+  I18N_IDS.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && L[id] !== undefined) el.innerHTML = L[id];
+  });
+  // Show-more button text
+  const showBtn = document.getElementById('showMoreBtn');
+  const showWrap = document.getElementById('showMoreWrap');
+  if (showBtn && showWrap && showWrap.style.display !== 'none') render();
+  // Typewriter
+  if (typeof typewriterReset === 'function') typewriterReset();
+}
+
+function toggleLang() { applyLang(currentLang === 'ru' ? 'en' : 'ru'); }
 
 // ── Ленивая загрузка Playable Ads ──
 let playablesLoaded = false;
@@ -1171,7 +1330,7 @@ function render() {
   wrap.style.display = remaining > 0 ? 'block' : 'none';
   if (btn && remaining > 0) {
     const next = Math.min(remaining, LOAD_MORE_COUNT);
-    btn.querySelector('span:first-child').textContent = 'Ещё ' + next + ' видео';
+    btn.querySelector('span:first-child').textContent = LANG[currentLang]['show-more'](next);
   }
 }
 
@@ -1253,6 +1412,8 @@ function toggleShowMore() {
 window.addEventListener('DOMContentLoaded', () => {
   const gamedevBtn = document.querySelector('.filter-btn[data-filter="gamedev"]');
   if (gamedevBtn) selectMainTab(gamedevBtn, 'gamedev');
+  // Применить сохранённый язык
+  if (currentLang !== 'ru') applyLang(currentLang);
 });
 
 // ── Фоновая предзагрузка Playable Ads ──
@@ -1275,35 +1436,40 @@ document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
 
 // ── Typewriter ──
 (function() {
-  const roles = ['Моушн Дизайнер', 'Unity Video Artist'];
   const el = document.getElementById('typewriter');
   if (!el) return;
-  let roleIndex = 0, charIndex = 0, deleting = false;
+  let roleIndex = 0, charIndex = 0, deleting = false, seq = 0;
 
-  function tick() {
-    const current = roles[roleIndex];
+  typewriterReset = function() {
+    seq++;
+    charIndex = 0; roleIndex = 0; deleting = false;
+    el.textContent = '';
+    const s = seq;
+    setTimeout(() => { if (seq === s) tick(s); }, 500);
+  };
+
+  function tick(s) {
+    if (s !== seq) return;
+    const roles = LANG[currentLang]['typewriter-roles'];
+    const current = roles[roleIndex % roles.length];
+    if (charIndex > current.length) { charIndex = current.length; deleting = true; }
+    let delay;
     if (!deleting) {
       el.textContent = current.slice(0, charIndex + 1);
       charIndex++;
-      if (charIndex === current.length) {
-        deleting = true;
-        setTimeout(tick, 2200);
-        return;
-      }
-      setTimeout(tick, 80);
+      if (charIndex === current.length) { deleting = true; delay = 2200; }
+      else delay = 80;
     } else {
       el.textContent = current.slice(0, charIndex - 1);
       charIndex--;
-      if (charIndex === 0) {
-        deleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-        setTimeout(tick, 400);
-        return;
-      }
-      setTimeout(tick, 45);
+      if (charIndex === 0) { deleting = false; roleIndex = (roleIndex + 1) % roles.length; delay = 400; }
+      else delay = 45;
     }
+    const ns = seq;
+    setTimeout(() => { if (seq === ns) tick(ns); }, delay);
   }
-  setTimeout(tick, 1200);
+  const s = seq;
+  setTimeout(() => { if (seq === s) tick(s); }, 1200);
 })();
 
 </script>
